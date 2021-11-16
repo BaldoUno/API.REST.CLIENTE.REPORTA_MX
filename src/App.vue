@@ -13,8 +13,9 @@
             <v-list-item-content>
               <v-list-item-title>Inicio</v-list-item-title>
             </v-list-item-content>
-          </v-list-item>                    
-           <v-list-item :to="{path: '/reporte'}">
+          </v-list-item>
+
+           <v-list-item :to="{path: '/ver'}">
             <v-list-item-action>
               <v-icon>mdi-{{ icons[1] }}</v-icon>
             </v-list-item-action>
@@ -22,14 +23,25 @@
               <v-list-item-title>Reportes</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-          <v-list-item :to="{path: '/contacto'}">
+
+           <v-list-item :to="{path: '/buscar'}">
             <v-list-item-action>
               <v-icon>mdi-{{ icons[2] }}</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>Mis Reportes</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+
+          <v-list-item :to="{path: '/contacto'}">
+            <v-list-item-action>
+              <v-icon>mdi-{{ icons[3] }}</v-icon>
             </v-list-item-action>
             <v-list-item-content>
               <v-list-item-title>Contacto</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
+
         </v-list>
       </v-navigation-drawer>
       <v-card class="mx-auto overflow-hidden" height="100%" width="100%">
@@ -37,12 +49,15 @@
       <v-app-bar class="deep-purple accent-4 white--text">
       <v-app-bar-nav-icon @click="drawer=true" class="white--text"></v-app-bar-nav-icon>
         <v-toolbar-title>                
-        <v-list-item :to="{path: '/'}">                
+        <v-list-item :to="{path: '/'}">
+                        
+        <!--<img src="@/assets/logo.png"/>-->
+        
         <v-img
-          alt="Vuetify Logo"
+          alt="Logo"
           class="shrink mr-2"
           contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+          src="@/assets/logo.png"
           transition="scale-transition"
           width="40"         
           :to="{path: '/'}" 
@@ -65,8 +80,7 @@ export default {
   name: 'App',
   data:()=> ({
     drawer:false,
-    icons: ['home','book','email'],
-
+    icons: ['home','book','notebook','email'],
   }),
 };
 </script>

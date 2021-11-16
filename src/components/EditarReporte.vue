@@ -42,7 +42,7 @@
 </template>
 
 <script>
-let url = 'https://app-c935da0b-c862-426e-8b68-2dfdad35a3bd.cleverapps.io/?Dataid=';
+let url = 'https://app-c935da0b-c862-426e-8b68-2dfdad35a3bd.cleverapps.io/?id=';
 import axios from 'axios';
 export default {
     name:'editarReporte',
@@ -76,7 +76,7 @@ export default {
         axios.put('https://app-c935da0b-c862-426e-8b68-2dfdad35a3bd.cleverapps.io/?id='+this.Dataid+'&correo='+this.reporte.Correo+'&telefono='+this.reporte.Telefono+'&hecho='+this.reporte.Hecho+'&descripcion='+this.reporte.Descripcion)
         //axios.put(url+this.Dataid, parametros)
         .then(function(){
-           router.push('/reporte'); 
+           router.push('/ver'); 
         })
         .catch(function(error){
           console.log(error);

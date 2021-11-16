@@ -3,7 +3,7 @@
     <v-row class="text-center">      
       <v-col class="mb-4">
         <h2 class="display-2 font-weight-bold mb-3">
-          Listado de Reporte
+          Mis Reportes
         </h2>       
       </v-col>        
     </v-row>
@@ -65,9 +65,8 @@
     </v-container>
 </template>
 
-
 <script>
-
+//let url = 'https://app-c935da0b-c862-426e-8b68-2dfdad35a3bd.cleverapps.io/?id=new@gmail.com';
 import axios from 'axios';
 export default {
     name:'listarReportes',
@@ -79,32 +78,45 @@ export default {
             dialog:false,
             reportes:null,
             Dataid:null,
+            //dataid:this.$route.params.correo,
             snackbar:false,
             textsnack:'¡Registro Eliminado!'
         }
     },
     methods:{
         obtenerReportes(){
-            axios.get('https://app-c935da0b-c862-426e-8b68-2dfdad35a3bd.cleverapps.io/')
+            //axios.get('https://app-c935da0b-c862-426e-8b68-2dfdad35a3bd.cleverapps.io/')
+            this.Dataid = this.$route.params.Dataid;
+            axios.get('https://app-c935da0b-c862-426e-8b68-2dfdad35a3bd.cleverapps.io/?id='+this.Dataid)
             .then(r => {
                 this.reportes = r.data;
                 console.log(this.reportes);
+                console.log(this.dataid);
             })
             .catch(function(error){
                 console.log(error);
             })
         },
         
-        confirmarBorrado(Dataid){            
+        confirmarBorrado(Dataid){   
+            var router =  this.$router;         
             axios.delete('https://app-c935da0b-c862-426e-8b68-2dfdad35a3bd.cleverapps.io/?id='+Dataid)
-            .then(()=>{
+           /* .then(()=>{
                     this.obtenerReportes();
                     this.dialog = false;
                     this.snackbar = true
             })
             .catch(function(error){
                 console.log(error);
-            });    
+            });    */
+            .then(function(){
+                router.push('/ver'); 
+            })
+            .catch(function(error){
+                console.log(error);
+            });
+
+
         }
     }
 }

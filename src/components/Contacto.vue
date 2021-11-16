@@ -20,6 +20,12 @@
     </v-row>
 
     <v-row class="text-center">
+            <v-col class="mb-4">
+                <h1 class="display-5 font-weight-bold mb-3">Buscanos en nuestras redes sociales</h1>       
+            </v-col>
+        </v-row>
+
+    <v-row class="text-center">
      <v-col class="mb-4">
      <v-btn href="#" target="_blank" class="mx-10" fab dark large color="indigo darken-2">
       <v-icon dark>mdi-facebook</v-icon>
