@@ -68,7 +68,7 @@ export default {
 
            axios.post('https://app-c935da0b-c862-426e-8b68-2dfdad35a3bd.cleverapps.io/',formData)
            .then(()=>{
-               router.push('/Reporte');
+               router.push('/ver');
            })
            .catch(function(error){
         console.log(error);
