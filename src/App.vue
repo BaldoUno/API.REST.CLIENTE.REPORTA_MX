@@ -20,13 +20,22 @@
               <v-icon>mdi-{{ icons[1] }}</v-icon>
             </v-list-item-action>
             <v-list-item-content>
-              <v-list-item-title>Reportes</v-list-item-title>
+              <v-list-item-title>Ver Reportes</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+
+          <v-list-item :to="{path: '/crear'}">
+            <v-list-item-action>
+              <v-icon>mdi-{{ icons[2] }}</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>Crear Reporte</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
 
            <v-list-item :to="{path: '/buscar'}">
             <v-list-item-action>
-              <v-icon>mdi-{{ icons[2] }}</v-icon>
+              <v-icon>mdi-{{ icons[3] }}</v-icon>
             </v-list-item-action>
             <v-list-item-content>
               <v-list-item-title>Mis Reportes</v-list-item-title>
@@ -35,7 +44,7 @@
 
           <v-list-item :to="{path: '/contacto'}">
             <v-list-item-action>
-              <v-icon>mdi-{{ icons[3] }}</v-icon>
+              <v-icon>mdi-{{ icons[4] }}</v-icon>
             </v-list-item-action>
             <v-list-item-content>
               <v-list-item-title>Contacto</v-list-item-title>
@@ -80,7 +89,7 @@ export default {
   name: 'App',
   data:()=> ({
     drawer:false,
-    icons: ['home','book','notebook','email'],
+    icons: ['home','book','pencil','notebook','email'],
   }),
 };
 </script>
